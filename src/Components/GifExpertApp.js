@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import AddCategory from "./AddCategory";
+
 const GifExpertApp = () => {
   const [categories, setCategories] = useState([
     "One Punch man",
@@ -20,7 +22,7 @@ const GifExpertApp = () => {
           return <li key={el}>{el}</li>;
         })}
       </ol>
-      <button onClick={handleAdd}>Agregar nueva categoría</button>
+      <AddCategory />
       <hr />
     </>
   );
