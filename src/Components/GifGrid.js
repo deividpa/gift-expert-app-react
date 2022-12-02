@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import getGifs from "../helpers/getGifs";
 
 import GifGridItem from "./GifGridItem";
 
@@ -8,27 +9,8 @@ const GifGrid = ({ category }) => {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
-    getGifs();
+    getGifs(category).then((imgs) => setImages(imgs));
   }, []);
-
-  const getGifs = async () => {
-    const url =
-      "https://api.giphy.com/v1/gifs/search?q=Rick y morty&limit=10&api_key=purMBIhqH6ky12aZCh1QFOKpfeOXufq2";
-
-    const resp = await fetch(url);
-    const { data } = await resp.json();
-
-    const gifs = data.map((img) => {
-      return {
-        id: img.id,
-        title: img.title,
-        image: img.images?.downsized_medium.url,
-      };
-    });
-
-    console.log(gifs);
-    setImages(gifs);
-  };
 
   //getGifs();
 
