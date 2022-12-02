@@ -35,9 +35,11 @@ const GifGrid = ({ category }) => {
   return (
     <div>
       <h3>{category}</h3>
-      {images.map((image) => {
-        return <GifGridItem key={image.id} {...image} />;
-      })}
+      <section id="cardContainer">
+        {images.map((image) => {
+          return <GifGridItem key={image.id} {...image} />;
+        })}
+      </section>
     </div>
   );
 };
