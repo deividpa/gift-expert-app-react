@@ -24,20 +24,23 @@ input {
 #cardContainer {
   display: flex;
   flex-wrap: wrap;
+  gap: 10px;
   justify-content: center;
 }
 
 .card {
+  align-content: space-between;
   border: 1px solid #000;
   border-radius: 5px;
   display: flex;
+  flex-basis: 170px;
   flex-wrap: wrap;
   justify-content: center;
   margin: 5px;
 }
 
 .card img {
-  max-width: 250px;
+  max-width: 150px;
   flex: 1 1 100%;
 }
 
